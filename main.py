@@ -21,7 +21,7 @@ class MyGUI:
         self.browse_button = tk.Button(self.window, text="Browse", command=self.browse_files)
         self.browse_button.pack()
 
-        self.instruction_label = tk.Label(self.window, text="Click Browse to select files to merge (Selected files can only have xlsx or csv extension):")
+        self.instruction_label = tk.Label(self.window, text="Click Browse to select files to merge (Selected files can only have csv extension):")
         self.instruction_label.pack()
 
         self.file_list = tk.Listbox(self.window, selectmode=tk.MULTIPLE, width=60, height=10)
@@ -48,7 +48,7 @@ class MyGUI:
         self.window.config(menu=self.menu_bar)
 
     def browse_files(self):
-        file_paths = filedialog.askopenfilenames(filetypes=[("Excel files", "*.xlsx"), ("CSV files", "*.csv")])
+        file_paths = filedialog.askopenfilenames(filetypes=[("CSV files", "*.csv")])
         if file_paths:
             self.selected_files.extend(file_paths)
             self.show_selected_files()
