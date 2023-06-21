@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import filemerger
 import pandas as pd
+import os
 
 class MyGUI:
 
@@ -55,7 +56,8 @@ class MyGUI:
     def show_selected_files(self):
         self.file_list.delete(0, tk.END)
         for file_path in self.selected_files:
-            self.file_list.insert(tk.END, file_path)
+            file_name = os.path.basename(file_path)
+            self.file_list.insert(tk.END, file_name)
 
     def delete_file(self):
         selected_indices = self.file_list.curselection()
