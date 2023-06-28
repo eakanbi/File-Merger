@@ -24,7 +24,7 @@ class MyGUI:
         self.instruction_label = tk.Label(self.window, text="Click Browse to select files to merge (Selected files can only have csv extension):")
         self.instruction_label.pack()
 
-        self.file_list = tk.Listbox(self.window, selectmode=tk.MULTIPLE, width=60, height=10)
+        self.file_list = tk.Listbox(self.window, selectmode=tk.MULTIPLE, width=60, height=10) # create a list box
         self.file_list.pack()
 
         self.delete_button = tk.Button(self.window, text="Delete", command=self.delete_file)
